@@ -1122,19 +1122,19 @@ var itemlist = {
 		amount = 0,
 	},
 	weaponnaturestaff = {
-		code = 'weaponnaturestaff',
-		name = 'Staff of Nature',
-		icon = "res://files/images/items/naturestaff.png",
-		description = "A twisted branch infused with Nature's power. Strengthens wielder but is not a very effective weapon.\n[color=yellow]Requirements: 1 Magic Affinity[/color]",
-		effect = [{type = 'incombat', effect = 'damage', effectvalue = 4, effectscale = "maf", descript = "+4 Damage, Maf Scaling"},{type = 'onequip', effect = 'health', effectvalue = 25, descript = "+25 Health"},{type = 'onequip', effect = 'maf', effectvalue = 1, descript = "+1 Magic Affinity"}],
-		recipe = '',
-		reqs =  [{reqstat = 'smaf', oper = 'gte', reqvalue = 1}],
-		cost = 200,
-		type = 'gear',
-		subtype = 'weapon',
-		weight = 5,
-		amount = 0,
-	},
+        code = 'weaponnaturestaff',
+        name = 'Staff of Nature',
+        icon = "res://files/images/items/naturestaff.png",
+        description = "A twisted branch infused with Nature's power. Strengthens wielder but is not a very effective weapon.\n[color=yellow]Requirements: 1 Magic Affinity[/color]",
+        effect = [{type = 'incombat', effect = 'damage', effectvalue = 4, effectscale = "maf", descript = "+4 Damage, Magic Aff Scaling"},{type = 'onequip', effect = 'health', effectvalue = 25, descript = "+25 Health"},{type = 'onequip', effect = 'maf', effectvalue = 1, descript = "+1 Magic Affinity"}],
+        recipe = '',
+        reqs =  [{reqstat = 'smaf', oper = 'gte', reqvalue = 1}],
+        cost = 200,
+        type = 'gear',
+        subtype = 'weapon',
+        weight = 5,
+        amount = 0,
+    },
 	armortentacle = {
 		code = 'armortentacle',
 		name = 'Living Armor',
@@ -1181,20 +1181,20 @@ var itemlist = {
 		enchant = 'unique',
 	},
 	weaponcursedsword = {
-		code = 'weaponcursedsword',
-		name = "Cursed Blade",
-		icon = "res://files/images/items/weaponcursedsword.png",
-		description = "An ancient mystical blade. Strong magic keeps it sharp even to this day, but all power comes with a price... ",
-		effect = [{type = 'incombat', effect = 'damage', effectvalue = 15, effectscale = "maf", descript = "+15 Damage, Maf Scaling"}, {type = 'passive', effect = 'doubleattack', effectvalue = 20, descript = '20% chance to attack twice'}, {type = 'passive', effect = 'defenseless', descript = "Wielder's armor is useless"}],
-		recipe = '',
-		reqs = null,
-		cost = 800,
-		type = 'gear',
-		subtype = 'weapon',
-		weight = 5,
-		amount = 0,
-		enchant = 'unique',
-	},
+        code = 'weaponcursedsword',
+        name = "Cursed Blade",
+        icon = "res://files/images/items/weaponcursedsword.png",
+        description = "An ancient mystical blade. Strong magic keeps it sharp even to this day, but all power comes with a price... ",
+        effect = [{type = 'incombat', effect = 'damage', effectvalue = 15, effectscale = "maf", descript = "+15 Damage, Magic Aff Scaling"}, {type = 'passive', effect = 'doubleattack', effectvalue = 20, descript = '20% chance to attack twice'}, {type = 'passive', effect = 'defenseless', descript = "Wielder's armor is useless"}],
+        recipe = '',
+        reqs = null,
+        cost = 800,
+        type = 'gear',
+        subtype = 'weapon',
+        weight = 5,
+        amount = 0,
+        enchant = 'unique',
+    },
 	weaponhammer = {
 		code = 'weaponhammer',
 		name = "Great Hammer",
@@ -1864,6 +1864,9 @@ func amnesiapoteffect():
 		person.mind.vice = "none"
 		person.mind.vice_removed = true
 		person.mind.vice_known = true
+	if !person.mind.approaches.pushed.empty():
+		text += person.dictionary("\n$He seems to have forgotten about any [color=aqua]Pushed[/color] [color=red]Approaches[/color] also. ")
+		person.mind.approaches.pushed.clear()
 	###---End Expansion---###
 	for i in person.relations:
 		person.relations[i] = 0
