@@ -2,7 +2,7 @@
 
 ###---Variables: These can safely be altered---### Still in Progress, will be edited through In-Game Settings UI eventually
 
-var modversion = "1.7a"
+var modversion = "1.8"
 
 #---Aric's and Game's Base Values potentially changed by Ralph's
 var use_ralphs_tweaks = false					# Set this to true if you want to use the settings within applyRalphsTweaks as well as the Hybrid system.
@@ -90,6 +90,10 @@ var vices_discovery_has_to_present_first = false
 var vices_discovery_presentation_bonus = 20
 
 #---Genitals Expanded
+#Disable Tearing System
+var disablevaginatearing = false
+var disableanaltearing = false
+
 #Chance of Holes staying Stretched during Sex. Chance + (Elasticity*10)
 var stretchchancevagina = 50
 var stretchchanceanus = 50
@@ -130,6 +134,9 @@ var changecrystalreq = 4
 #Automatic Crystal Lifeforce Chance
 var crystallifeforcerestorechance = 80
 var crystal_shatter_chance = 80
+
+#Warn on Missing Researcher
+var show_warning_if_missing_researcher = true
 
 
 #------Pregnancy Expanded
@@ -257,7 +264,7 @@ var spellcost = 1 								# Ralph's - 2, This is a multiplicative that applies t
 
 #Spell Tweak Effects
 var reduce_rebellion_with_fear = 1				# Ralph's - 3, This divides by the players magic affinity to determine how much rebellion is reduced.
-var summontentacle_lewdness = 0					# Ralph's - 5, Make... them... lewd...
+var summontentacle_lewdness = 5					# Ralph's - 5, Make... them... lewd...
 
 #Reputation Tweak
 var reputation_loss = -4						# Ralph's - -18, How much your reputation suffers when you sell a bad slave to Sebastian.

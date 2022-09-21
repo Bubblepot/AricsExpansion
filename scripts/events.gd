@@ -605,3 +605,242 @@ func skybosswin():
 	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
 	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
 ###---Expansion End---###
+
+###---Added by Expansion---### BossWin Functions for Expanded Areas (Bubblepot)
+#Spine
+func spinebossenc():
+	var state = false
+	var text = textnode.spinebossenc
+	var buttons = []
+	
+	buttons.append({text = 'Fight', function = 'spinebossfight'})
+	globals.main.dialogue(state, self, text, buttons)
+
+func spinebossfight():
+	closedialogue()
+	globals.main.exploration.buildenemies("bossdragon")
+	globals.main.exploration.launchonwin = 'spinebosswin'
+	globals.main.get_node("combat").nocaptures = true
+	globals.main.exploration.enemyfight()
+
+func spinebosswin():
+	var state = true
+	var text = textnode.spinebosswin2
+	var buttons = []
+	globals.main.dialogue(state, self, text, buttons)
+	globals.main.exploration.progress = 9
+	globals.main.exploration.winscreenclear()
+	globals.main.exploration.generaterandomloot([], {number = 0}, rand_range(1,3), [1,3])
+	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
+	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
+	#Desert
+	# func dragonbossenc():
+	# 	var state = false
+	# 	var text = textnode.dragonbossenc
+	# 	var buttons = []
+		
+	# 	buttons.append({text = 'Fight', function = 'dragonbossfight'})
+	# 	globals.main.dialogue(state, self, text, buttons)
+	
+	# func dragonbossfight():
+	# 	closedialogue()
+	# 	globals.main.exploration.buildenemies("bossdragon")
+	# 	globals.main.exploration.launchonwin = 'dragonbosswin'
+	# 	globals.main.get_node("combat").nocaptures = true
+	# 	globals.main.exploration.enemyfight()
+	
+	# func dragonbosswin():
+	# 	var state = true
+	# 	var text = textnode.dragonbosswin
+	# 	var buttons = []
+	# 	globals.state.decisions.append("dragonkilled")
+	# 	globals.main.dialogue(state, self, text, buttons)
+	# 	globals.main.exploration.progress = 9
+	# 	globals.main.exploration.winscreenclear()
+	# 	globals.main.exploration.generaterandomloot([], {number = 0}, rand_range(1,3), [1,3])
+	# 	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
+	# 	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
+#Sea Lair
+func seabossenc():
+	var state = false
+	var text = textnode.seabossenc
+	var buttons = []
+	
+	buttons.append({text = 'Fight', function = 'seabossfight'})
+	globals.main.dialogue(state, self, text, buttons)
+
+func seabossfight():
+	closedialogue()
+	globals.main.exploration.buildenemies("bossdragon")
+	globals.main.exploration.launchonwin = 'seabosswin'
+	globals.main.get_node("combat").nocaptures = true
+	globals.main.exploration.enemyfight()
+
+func seabosswin():
+	var state = true
+	var text = textnode.seabosswin2
+	var buttons = []
+	globals.main.dialogue(state, self, text, buttons)
+	globals.main.exploration.progress = 9
+	globals.main.exploration.winscreenclear()
+	globals.main.exploration.generaterandomloot([], {number = 0}, rand_range(1,3), [1,3])
+	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
+	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
+#Hellscape
+func hellbossenc():
+	var state = false
+	var text = textnode.hellbossenc
+	var buttons = []
+	
+	buttons.append({text = 'Fight', function = 'hellbossfight'})
+	globals.main.dialogue(state, self, text, buttons)
+
+func hellbossfight():
+	closedialogue()
+	globals.main.exploration.buildenemies("bossdragon")
+	globals.main.exploration.launchonwin = 'hellbosswin'
+	globals.main.get_node("combat").nocaptures = true
+	globals.main.exploration.enemyfight()
+
+func hellbosswin():
+	var state = true
+	var text = textnode.hellbosswin
+	var buttons = []
+	globals.main.dialogue(state, self, text, buttons)
+	globals.main.exploration.progress = 9
+	globals.main.exploration.winscreenclear()
+	globals.main.exploration.generaterandomloot([], {number = 0}, rand_range(1,3), [1,3])
+	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
+	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
+#Colliseum
+func skybossenc():
+	var state = false
+	var text = textnode.skybossenc
+	var buttons = []
+	
+	buttons.append({text = 'Fight', function = 'skybossfight'})
+	globals.main.dialogue(state, self, text, buttons)
+
+func skybossfight():
+	closedialogue()
+	globals.main.exploration.buildenemies("bossdragon")
+	globals.main.exploration.launchonwin = 'skybosswin'
+	globals.main.get_node("combat").nocaptures = true
+	globals.main.exploration.enemyfight()
+
+func skybosswin():
+	var state = true
+	var text = textnode.skybosswin
+	var buttons = []
+	globals.main.dialogue(state, self, text, buttons)
+	globals.main.exploration.progress = 9
+	globals.main.exploration.winscreenclear()
+	globals.main.exploration.generaterandomloot([], {number = 0}, rand_range(1,3), [1,3])
+	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
+	globals.main.exploration.generateloot([globals.weightedrandom(bossloot), 1], '')
+###---Expansion End---###
+
+
+###---Added by Expansion---### DimCrystal Events
+var ae_node = globals.ae_eventtext
+
+#Stages = -10: Dark | 0: Intro | 5: IntroComplete
+func dimcrystalinitiate(stage = 0):
+	var state = true
+	var text
+	var buttons = []
+	var sprites = []
+	
+	match stage:
+		0:
+			state = false
+			globals.main.animationfade(1.2)
+			if OS.get_name() != 'HTML5':
+				yield(globals.main, 'animfinished')
+			globals.main.music_set('stop')
+			globals.main.backgroundinstant('mansion')
+			globals.main.clearscreen()
+			text = ae_node.dimcrystal_intro_0
+			buttons.append(['Enter the Opening','dimcrystalinitiate',1])
+		1:
+			state = false
+			globals.main.animationfade(1.2)
+			if OS.get_name() != 'HTML5':
+				yield(globals.main, 'animfinished')
+			globals.main.music_set('start')
+			globals.main.backgroundinstant('stairs')
+			globals.main.clearscreen()
+			text = ae_node.dimcrystal_intro_1
+			buttons.append(['Step Inside','dimcrystalinitiate',2])
+		2:
+			state = false
+			globals.main.animationfade(1.2)
+			if OS.get_name() != 'HTML5':
+				yield(globals.main, 'animfinished')
+			globals.main.music_set('explore')
+			globals.main.backgroundinstant('dimcrystal_dull')
+			globals.main.clearscreen()
+			text = ae_node.dimcrystal_intro_2
+			buttons.append(['Infuse It with Mana','dimcrystalinitiate',3])
+		3:
+			state = false
+			globals.main.animationfade(1.2)
+			if OS.get_name() != 'HTML5':
+				yield(globals.main, 'animfinished')
+			globals.main.music_set('intimate')
+			globals.main.backgroundinstant('dimcrystal_light1')
+			globals.main.clearscreen()
+			text = ae_node.dimcrystal_intro_3
+			buttons.append(['Return Upstairs','dimcrystalinitiate',4])
+		4:
+			globals.state.sidequests.dimcrystal = 5
+			globals.main.animationfade(1.2)
+			closedialogue()
+			if OS.get_name() != "HTML5":
+				yield(globals.main, 'animfinished')
+			globals.main.backgroundinstant('mansion')
+			globals.main._on_mansion_pressed()
+			return
+	
+	globals.main.dialogue(state, self, globals.player.dictionary(text), buttons, sprites)
+
+
+func dimcrystaldarkened(stage = 0):
+	var state = true
+	var text
+	var buttons = []
+	var sprites = []
+	
+	match stage:
+		0:
+			state = false
+			globals.main.animationfade(1.5)
+			if OS.get_name() != 'HTML5':
+				yield(globals.main, 'animfinished')
+			globals.main.music_set('dungeon')
+			globals.main.backgroundinstant('stairs_red')
+			globals.main.clearscreen()
+			text = ae_node.dimcrystal_dark_0
+			buttons.append(['Rush Downstairs','dimcrystaldarkened',1])
+		1:
+			state = false
+			globals.main.animationfade(1.5)
+			if OS.get_name() != 'HTML5':
+				yield(globals.main, 'animfinished')
+			globals.main.music_set('dungeon')
+			globals.main.backgroundinstant('dimcrystal_dark1')
+			globals.main.clearscreen()
+			text = ae_node.dimcrystal_dark_1
+			buttons.append(['Return Upstairs','dimcrystaldarkened',2])
+		2:
+			globals.state.sidequests.dimcrystal = -10
+			globals.player.dailyevents.append('dimcrystaldarkened')
+			globals.main.animationfade(1.5)
+			closedialogue()
+			if OS.get_name() != "HTML5":
+				yield(globals.main, 'animfinished')
+			globals.main.backgroundinstant('mansion')
+			globals.main._on_mansion_pressed()
+			return
+	
+	globals.main.dialogue(state, self, globals.player.dictionary(text), buttons, sprites)
