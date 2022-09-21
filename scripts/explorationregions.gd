@@ -45,7 +45,7 @@ var database = {
 		enemies = [{value = 'wolveswithperson', weight = 0.5},{value = 'fairyattackers', weight = 0.3},{value = 'banditseasy', weight = 3},{value = 'peasant', weight = 3},{value ='solobear', weight = 4},{value = 'wolveseasy', weight = 9},{value = 'treasurechest', weight = 1.35},{value = 'noenemyencountered', weight = 10}], #ralphD - added nonenemyencounters #ralphA
 		encounters = [['chloeforest','globals.state.sidequests.chloe in [0,1] && !globals.state.sidequests.cali in [17,20,21]',10]],
 		length = 5,
-		exits = ['shaliq', 'wimbornoutskirts', 'elvenforest', 'graveyard','rivercrossing'], #BBP-Added Graveyard,Rivercrossing
+		exits = ['shaliq', 'wimbornoutskirts', 'elvenforest','rivercrossing'], #BBP-Added Graveyard,Rivercrossing
 		tags = ['wimborn'],
 		races = [{value = 'Elf', weight = 2}, {value = 'Wolf', weight = 1}, {value = 'Bunny', weight = 1}, {value = 'Human', weight = 10}],
 		levelrange = [2,4],
@@ -327,7 +327,7 @@ var database = {
 		levelrange = [9,10],
 	},
 	riversideplains = {
-		background = 'meadow',
+		background = 'meadows',
 		music = 'explore',
 		reqs = "true",
 		combat = true,
@@ -382,7 +382,7 @@ var database = {
 		code = 'graveyard',
 		name = 'Graveyard',
 		description = "Many graves litter the ground, some marked and others not. There is a crypt in the centre of the field of headstones. ",
-		enemies = [{value = 'skeleton', weight = 1},{value = 'zombiesingle', weight = 2},{value = 'murderofcrows', weight = 4},{value = 'noenemyencountered', weight = 6}], #ralphD - added nonenemyencounters
+		enemies = [{value = 'skeletonsingle', weight = 1},{value = 'zombiesingle', weight = 2},{value = 'murderofcrows', weight = 4},{value = 'noenemyencountered', weight = 6}], #ralphD - added nonenemyencounters
 		encounters = [],
 		length = 5,
 		exits = ['rivercrossing','crypt'],
@@ -971,7 +971,7 @@ var database = {
 		code = 'poisonswamp',
 		name = 'Poisonous Swamp',
 		description = "Ugly waterlogged trees dot these twisted lands. Every step squelches in liquids that seem to be melting your shoes. ",
-		enemies = [{value = 'poisonouselashtowreckyourday', weight = 2},{value = 'poisontoadchilling', weight = 2},{value = 'noenemyencountered', weight = 6}], #ralphD - added nonenemyencounters
+		enemies = [{value = 'poisonouslashtowreckyourday', weight = 2},{value = 'poisontoadchilling', weight = 2},{value = 'noenemyencountered', weight = 6}], #ralphD - added nonenemyencounters
 		encounters = [],
 		length = 10,
 		exits = ['deephole','marsh'],
