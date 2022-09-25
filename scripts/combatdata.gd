@@ -596,29 +596,29 @@ var enemygrouppools = {
 	#Snowy Peaks
 	frozenwispsingle = {
 		units = [['frozenwisp', 1, 1]], awareness = 30, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A wisp with an icy aura flies up ahead.',
+		descriptionambush = 'A freezing light shines ahead. It suddenly swoops toward you.',
 	},
 	frozenwispsmany = {
 		units = [['frozenwisp', 3, 8]], awareness = 30, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'Many bright lights shine up ahead. A group of wisps, exerting their sheer cold. ',
+		descriptionambush = 'Many bright lights shine up ahead. They suddenly rush at you.',
 	},
 	yetiwander = {
 		units = [['yeti', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = '$scoutname spots a [color=aqua]yeti[/color] digging about the snow in search of food.',
+		descriptionambush = 'An angry Yeti comes after you.',
 	},
 	frostgiantwander = {
 		units = [['mbossfrostgiant', 1, 1]], awareness = 25, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A giant with ice blue skin walks up ahead.',
+		descriptionambush = 'Rapid tremors cause you to tense just as a frost giant charges through the blizzard at you.',
 	},
 	#Snow Plains
 	frozenwolfpack = {
 		units = [['frostwolf', 3, 6]], awareness = 25, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'You come across a [color=aqua]large pack of frost wolves[/color].',
+		descriptionambush = 'You are attacked by a [color=aqua]large pack of frost wolves[/color].',
 	},
 	snowleopardhunting = {
 		units = [['snowleopard', 1, 1]], awareness = 30, captured = null, special = null,
@@ -627,8 +627,8 @@ var enemygrouppools = {
 	},
 	polarbearhunt = {
 		units = [['polarbear', 1, 1]], awareness = 30, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = "$scoutname spots a [color=aqua]polar bear[/color] several yards away, just in time to let you react to him. ",
+		descriptionambush = "As you walk through the wilderness, you hear a fierce roar. It seems you have attracted a [color=aqua]polar bear[/color] in search of a meal. ",
 	},
 	#Lizard Village
 	#AbandonedVillage
@@ -692,120 +692,120 @@ var enemygrouppools = {
 	},
 	jehosephat = {
 		units = [['bossjehosephat',1,1]], awareness = -10, captured = null, special = null,
-		description = "An ornately wrapped and dressed mummy stand before his coffin staring at it. He turns his gaze on you and his eyes light aflame.",
+		description = "An ornately wrapped and dressed mummy stands before his coffin staring at it. He turns his gaze on you and his eyes light aflame.",
 	},
 	#Farsea
 	jellyfishschool = {
 		units = [['jellyfish', 2, 4]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'There is a school of jellyfish ahead.',
+		descriptionambush = 'A school of jellyfish surrounds you.',
 	},
 	drownedgroup = {
 		units = [['drowned', 2, 8]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'There are corpses in the water. You notice one of them twitch unnaturally.',
+		descriptionambush = 'There are corpses in the water. Disgusted you make to move past when one of them suddenly grabs at you.',
 	},
 	sharkswim = {
 		units = [['shark', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A lone shark swims toward you. $scoutname noticed it in time to allow a getaway. ',
+		descriptionambush = 'Shark attack!',
 	},
 	orcasolo = {
 		units = [['orca', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'You spy the black and white shape of an orca in the water.',
+		descriptionambush = 'A lone orca seeks to make a meal out of you.',
 	},
 	orcapodfew = {
 		units = [['orca', 3, 6]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'An orca pod is playing up ahead. They dive and twirl among themselves. They have not noticed you yet.',
+		descriptionambush = 'An orca pod has decided that you will make a good plaything.',
 	},
 	nereidscoutparty = {
 		units = [['deepwaternereid', 2, 3],['orca', 2, 3],['jellyfish', 0, 2]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A scouting party of nereids is up ahead. They appear to have tamed some of the local fauna and use them as hunting tools. These are much better armed than the ones on the surface. ',
+		descriptionambush = 'A well-armed Nereid scout party ambushes you.',
 	},
 	#Deepsea
 	orcapodmany = {
 		units = [['orca', 4, 8]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A large pod of orcas is on the hunt.',
+		descriptionambush = 'A large pod of orcas spots you and races to surround you.',
 	},
 	greatwhitehunting = {
 		units = [['greatwhiteshark', 3, 6]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'There are some great white sharks hunging up ahead. They do not seem to appreciate each others presence. The hunting must be good here. They have not noticed you yet.',
+		descriptionambush = 'Great white shark attack!',
 	},
 	nereidsolo = {
 		units = [['deepwaternereid', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A nereid swirls their way through the water with easy grace.',
+		descriptionambush = 'A spear soars past you. You glance up to see a nereid preparing another one and you rush to engage before you get skewered.',
 	},
 	scyllasolo = {
 		units = [['scylla', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A scylla ambulates through the water with gentle-looking strokes of their many lower limbs.',
+		descriptionambush = "Black ink surrounds you. [color=aqua]It's a Scylla![color] $scoutname shouts.",
 	},
 	#Seafloor
 	nereidpatrol = {
 		units = [['deepwaternereid', 4, 6],['greatwhiteshark', 1, 2]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A squad of nereids seems to be patrolling this area.',
+		descriptionambush = 'A heavily armed squad of nereids ambushes you. Their movements and execution indicate greater formal training than those encountered on the surface.',
 	},
 	nereidguards = {
 		units = [['deepwaternereid', 4, 8]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A Nereid guard patrol swims the waters ahead. They appear to be looking for intruders. It is a bit difficult for you to tell at what point in the water you might be trepassing. ',
+		descriptionambush = "A nereid guard patrol catches you off guard.",
 	},
 	scyllascouts = {
 		units = [['scylla', 2, 4]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'Some tough-looking Scylla swim through the depths as if the pressure was nothing.',
+		descriptionambush = 'What seem to be Scylla scouts ambush you.',
 	},
 	#UnderwaterCanyon
 	scyllaguards = {
 		units = [['scylla', 4, 6]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'Some Scylla appear to be guarding an opening in the canyon wall. They have not noticed you yet thankfully.',
+		descriptionambush = 'Some Scylla guardsmen take issue with your presence.',
 	},
 	scyllapatrol = {
 		units = [['scylla', 4, 7],['giantsquid', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A scylla patrol seems to be searching for intruders using the local fauna as hunting tools.',
+		descriptionambush = 'Someone yells a command and a giant squid comes after you.',
 	},
 	giantsquidswim = {
 		units = [['giantsquid', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A giant squid swims lazily by.',
+		descriptionambush = 'A giant squid attempts to eat you.',
 	},
 	#Leviathan Lair
 	#Poison Swamp
 	poisontoadchilling = {
 		units = [['poisontoad', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A brightly colored toad sits by itself surrounded by dead predators. ',
+		descriptionambush = 'A brightly colored toad jumps at you.',
 	},
 	poisonouslashtowreckyourdaay = {
 		units = [['poisonouslash', 3, 6]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A tainted looking vine whips idly through the air.',
+		descriptionambush = 'An oddly coloured vine whips toward you.',
 	},
 	#Deep hole
 	demonwandering = {
 		units = [['demon', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'You encounter an unusually well-armed demon.',
+		descriptionambush = 'A strong looking demon ambushes you.',
 	},
 	#Dark tunnel
 	demonpatrol = {
 		units = [['demon', 2, 4]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A group of armed demons seem to be patrolling these tunnels.',
+		descriptionambush = 'A group of armed demons ambushes you.',
 	},
 	demoncamp = {
 		units = [['demon', 4, 8]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'Demons appear to have made camp here. Unsurprising given how poor their reception is on the surface.',
+		descriptionambush = 'You stumble into an encampment full of Demons. They take up arms and rush you.',
 	},
 	#Hellscape
 	unholydemon = {
@@ -816,57 +816,57 @@ var enemygrouppools = {
 	#Mountain Peaks
 	eaglehunt = {
 		units = [['eagle', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'An eagle soars the skies above.',
+		descriptionambush = 'An eagle swoops toward you with talons outstretched.',
 	},
 	falconhunt = {
 		units = [['falcon', 1, 1]], awareness = 30, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A falcon scans the earth below in search of food.',
+		descriptionambush = 'A falcon dives at you.',
 	},
 	#StormCrown
 	skyharpyflock = {
 		units = [['skyharpy', 3, 5]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A flock of harpies fight and argue with one another. The harpies up here appear to be stronger and more hardy than the ones found lower down in the mountains. You remain unnoticed.',
+		descriptionambush = 'A flock of harpies descend on you in a sreeching mass of feathers.',
 	},
 	skyharpysolo = {
 		units = [['skyharpy', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A single harpy is perched on a rock preening.',
+		descriptionambush = 'A harpy makes an attempt at gouging out your eyes.',
 	},
 	skyseraphhermit = {
 		units = [['skyseraph', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A scruffy but hardy looking Seraph soars above you, well within your range. Their attention seems to be elsewhere and you remain unnoticed.',
+		descriptionambush = 'A cantankerous Seraph hermit does not seem to appreciate your presence and dives toward you.',
 	},
 	dragonkinhermit = {
 		units = [['dragonkinbbp', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A strong looking Dragonkin hovers above you, looking around for something. They seem bored. ',
+		descriptionambush = 'A sense of foreboding causes you to look up and you see a powerful-looking Dragonkin grinning at you as they hover in the air. They prime their weapon and dive toward you.',
 	},
 	#Skysphere
 	wyvernflyby = {
 		units = [['flyingwyvern', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A small wyvern flies closeby in search of food. You are as yet unnoticed.',
+		descriptionambush = 'The sound of heavy flapping makes you turn just in time to see the wyvern swooping toward you.',
 	},
 	#Sky Island
 	#The Beyond
 	unknownwbirdflyby = {
 		units = [['unknownbird', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = "A strangely luminiscent shape moves ahead. It looks like a bird but you don't see clearly enough to be sure." ,
+		descriptionambush = 'A vaguely bird-shaped light sends a blast of raw magic your way.',
 	},
 	unknownwyvernflyby = {
 		units = [['unknownwyvern', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A strangely luminiscent shape moves ahead. It is large and boasts an immense wingspan and teeth. It is a wyvern. Or at least it looks like one.',
+		descriptionambush = 'An ethereal wyvern spits a ball of raw magic that you only barely dodge. It roars its challenge and flies toward you.',
 	},
 	unknownserpentflyby = {
 		units = [['unknownserpent', 1, 1]], awareness = 20, captured = null, special = null,
-		description = '',
-		descriptionambush = '',
+		description = 'A strangely luminiscent shape moves ahead. It is large, long and sinuous. It flies despite having no wings to speak of. It appears to be some kind of serpent.',
+		descriptionambush = 'A great snake hisses and spits a haze of magic toward you. You are unable to process what you are looking at before it is upon you.',
 	},
 	#Skycoliseum
 	holyseraph = {
