@@ -375,7 +375,7 @@ var database = {
 		levelrange = [4,10],
 	},
 	graveyard = {
-		background = 'darkness',
+		background = 'marsh',
 		music = 'explore',
 		reqs = "true",
 		combat = true,
@@ -398,7 +398,7 @@ var database = {
 		code = 'crypt',
 		name = 'Crypt',
 		description = "The crypt interior is larger than it originally appeared. Many corridors lead into big rooms. Strange noises permeate the air. Whispers, the scrape of bone, the slithering of cloth... ",
-		enemies = [{value = 'zombieskelly', weight = 1},{value = 'zombiegroup', weight = 2},{value = 'skeletongroup', weight = 2},{value = 'coldspiritmultiple', weight = 1},{value = 'skeleton', weight = 1.5},{value = 'zombiesingle', weight = 1.5},{value = 'coldspiritsingle', weight = 1.5},{value = 'noenemyencountered', weight = 6}], #ralphD - added nonenemyencounters
+		enemies = [{value = 'zombieskelly', weight = 1},{value = 'zombiegroup', weight = 2},{value = 'skeletongroup', weight = 2},{value = 'coldspiritmultiple', weight = 1},{value = 'skeletonsingle', weight = 1.5},{value = 'zombiesingle', weight = 1.5},{value = 'coldspiritsingle', weight = 1.5},{value = 'noenemyencountered', weight = 6}], #ralphD - added nonenemyencounters
 		encounters = [],
 		length = 5,
 		exits = ['graveyard'],
