@@ -1201,7 +1201,11 @@ func getSwollenDescription(person,short=false):
 				if person.preg.duration > globals.state.pregduration * .8 && person.knowledge.has('currentpregnancy'):
 					text += "[color=#F4A7D0]$His unborn child forces $his " + nameBelly() + " to protrude massively. $He will give birth soon, and it looks like $his body will give out if $he doesn't. [/color]"
 				else:
-					text += "[color=#E0D8C6]The impossible amount of [/color][color=aqua]" + nameCum() + "[/color][color=#E0D8C6] inside of $him has $his " + nameBelly() + " so swollen that $he looks like $he is about to give birth, and $he keeps coughing up and drooling " + nameCum() + " that worked its way through $his " + nameAsshole() + " up to $his mouth.[/color]"
+					text += "[color=#E0D8C6]The impossible amount of [/color][color=aqua]" + nameCum() + "[/color][color=#E0D8C6] inside of $him has $his " + nameBelly() + " so swollen that $he looks like $he is about to give birth"
+					if person.cum.ass > 0:
+						text += ". $He keeps coughing up and occassionally drooling " + nameCum() + " that must have worked its way through $his " + nameAsshole() + " up to $his mouth.[/color]"
+					else:
+						text += ".[/color]"
 		elif person.swollen >= height*1.5:
 			if short == false:
 				text += "$His " + nameBelly() + " is incredibly swollen and "
@@ -1229,7 +1233,7 @@ func getSwollenDescription(person,short=false):
 				if person.preg.duration > globals.state.pregduration * .4 && person.knowledge.has('currentpregnancy'):
 					text += "[color=#F4A7D0]$His advanced pregnancy is clearly evident by the prominent bulge in $his " + nameBelly() + ".[/color]"
 				else:
-					text += "[color=#E0D8C6]$His " + nameBelly() + " is swollen due to the [/color][color=aqua]" + nameCum() + "[/color][color=#E0D8C6] $he is retaining inside of $him.[/color]"
+					text += "[color=#E0D8C6]$His " + nameBelly() + " is swollen due to the [/color][color=aqua]" + nameCum() + "[/color][color=#E0D8C6] $he "+ globals.fastif(person == globals.player, 'are', 'is') +" retaining inside of $him.[/color]"
 		elif person.swollen >= height*.5:
 			if short == false:
 				text += "$His " + nameBelly() + " is swollen. It "
@@ -1678,6 +1682,7 @@ func nightly_womb(person):
 
 	person.preg.fertility = clamp(person.preg.fertility + 10 * (person.health / person.stats.health_max - 0.6) + 10 * (0.6 - person.stress / person.stats.stress_max), -20, 50)
 
+	ovulation_day(person)
 	if person.preg.has_womb == false || person.preg.is_preg == true || person.preg.ovulation_type <= 0 || person.preg.ovulation_stage != 1 || person.effects.has('contraceptive'):
 		return text
 
@@ -1699,7 +1704,7 @@ func nightly_womb(person):
 				if rand_range(0,100) <= multiBabyLimitChance || person.preg.unborn_baby.size() > 3:
 					break
 	
-	ovulation_day(person)
+	
 	#globals.traceFile('nightly_womb')
 	return text
 
@@ -2197,9 +2202,9 @@ func dailyUpdate(person):
 	if person.lactation == true && person.lactating.milkedtoday == false && person.lactating.milkstorage > 0:
 		getMilkLeak(person,50)
 #		dailyMilking(person,'none',false)
-	else:
-		#Resets it for the next day
-		person.lactating.milkedtoday = false
+	
+	#Resets it for the next day
+	person.lactating.milkedtoday = false
 
 	#Reset the Tracked Events for Tomorrow
 	person.dailyevents.clear()
@@ -2948,6 +2953,16 @@ func dailyLactation(person):
 	text += "$name's "+str(getChest(person))+ " produced [color=aqua]"+str(regen)+" milk[/color] today. "
 
 	#Pressure Stress and Swelling
+	if lact.milkedtoday == false && lact.milkstorage >= 1:
+		lact.daysunmilked += 1
+		if lact.daysunmilked >= 1:
+			text += "$name feels growing pressure in $his breasts as $he goes [color=red]unmilked[/color] for [color=aqua]"+ str(lact.daysunmilked) +" Days[/color]. "
+		#Turn Default .25 of Storage into Pressure
+		var transfer = round(lact.milkstorage * globals.expansionsettings.lacation_pressurepermilkstored)
+		lact.pressure += transfer
+		lact.milkstorage -= transfer
+	
+	#Hyperlactation
 	if person.lactating.hyperlactation == true:
 		pressure = person.lactating.milkstorage - person.lactating.milkmax
 		pressure = clamp(pressure, -10, 10)
@@ -3167,8 +3182,8 @@ func altereddiet_consumebottle(person):
 		text = "$name drank a bottle of piss for $his dinner."
 	return text
 
-enum {IMAGE_DEFAULT, IMAGE_NAKED, IMAGE_PREG}
-enum {LOW_STRESS, MID_STRESS, HIGH_STRESS}
+enum {IMAGE_DEFAULT, IMAGE_NAKED}
+enum {LOW_STRESS, MID_STRESS, HIGH_STRESS, IMAGE_PREG}
 var typeEnumToString = ['default','naked']
 
 var dictUniqueImagePaths = {
