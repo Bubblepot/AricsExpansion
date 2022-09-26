@@ -1079,15 +1079,15 @@ func victory():
 	globals.main.get_node("ResourcePanel").show()
 	globals.main.get_node("explorationnode").enemydefeated()
 
-func updateactiveabilities(person, ability):  #Leo changes in wider settings now need putting into the combat duplicates
-	var combatant = findcombatantfromslave(person)
-	if !combatant.activeabilities.has(ability): 
-		combatant.activeabilities.append(ability)
-	else:
-		combatant.activeabilities.erase(ability)
-	if combatant.actionpoints > 0:
-		combatant.selectcombatant()
-		combatant.buildabilities()
+# func updateactiveabilities(person, ability):  #Leo changes in wider settings now need putting into the combat duplicates
+# 	var combatant = findcombatantfromslave(person)
+# 	if !combatant.activeabilities.has(ability): 
+# 		combatant.activeabilities.append(ability)
+# 	else:
+# 		combatant.activeabilities.erase(ability)
+# 	if combatant.actionpoints > 0:
+# 		combatant.selectcombatant()
+# 		combatant.buildabilities()
 
 func trapdevourAI(attacker, skill, targetarray):
 	#Leo very basic, ignores escape and protection for example
