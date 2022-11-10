@@ -2,7 +2,7 @@
 
 ###---Variables: These can safely be altered---### Still in Progress, will be edited through In-Game Settings UI eventually
 
-var modversion = "1.8c"
+var modversion = "1.8d"
 
 #---Aric's and Game's Base Values potentially changed by Ralph's
 var use_ralphs_tweaks = false					# Set this to true if you want to use the settings within applyRalphsTweaks as well as the Hybrid system.
@@ -49,7 +49,10 @@ var player_treats_clothing_like_slave = false
 #If set to true, Unique Slaves will join your party without having to ask for consent first
 var uniqueslavesautopartyconsent = false
 
+#---Vocal Traits
 #Lip Size Increase Change (Chance is array-5*10, ie: plump and bigger give 10)
+var vocal_traits_autochange = true
+var vocal_traits_delaytimer = true
 var lipstraitbasechance = 20
 
 #Default to Nickname + First Name (Function from MinorTweaks, Renamed for Clarity)
@@ -597,6 +600,8 @@ func addConstantsSupport():
 		ihavebloodygoodtaste = {descript = "Set this to true to include British themed descriptions", object = self},
 		vices_luxury_effects = {descript = "Vice Effects (Adds Penalties and Bonuses to End of Day Luxury Calculations", object = self},
 		uniqueslavesautopartyconsent = {descript = "If set to true, Unique Slaves will join your party without having to ask for consent first", object = self},
+		vocal_traits_autochange = {descript = "Enable or Disable the Vocal Traits system (allowing Lisp or Mute to be added or removed based on Lip sizes).", object = self},
+		vocal_traits_delaytimer = {descript = "Enable or Disable the Vocal Traits Delay Timer (Sets a minimum of 1-7 days between automatic changes).", object = self},
 		lipstraitbasechance = {descript = "Lip Size Increase Change (Chance is array-5*10, ie: plump and bigger give 10)", min = 0.0, max = 50.0, object = self},
 		playerattractionmodifier = {descript = "Base Bonus or Penalty for Attraction Checks for PCs", min = -100.0, max = 100.0, object = self},
 		use_nickname_plus_first_name = {descript = "Default to Nickname + First Name (Function from MinorTweaks, Renamed for Clarity)", object = self},
