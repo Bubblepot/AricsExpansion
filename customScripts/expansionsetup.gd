@@ -509,8 +509,14 @@ func setLactation(person):
 		traitchance = round(traitchance)
 		if traitchance >= 1:
 			while traitchance > 0:
+				var choices = []
+				if hasregentrait == false:
+					choices.append('regen')
+				if hasstoragetrait == false:
+					choices.append('storage')
 				variable = rand_range(0,1)
-				if hasregentrait == false && variable > .5:
+				var choice = globals.randomitemfromarray(choices)
+				if choice == 'regen' && variable > .5:
 					variable = rand_range(0,1)
 					if variable > .8:
 						person.add_trait("Milk Flow 2")
@@ -518,7 +524,7 @@ func setLactation(person):
 						person.add_trait("Weak Milk Flow")
 					else:
 						person.add_trait("Milk Flow 1")
-				elif hasstoragetrait == false && variable > .5:
+				elif choice == 'storage' && variable > .5:
 					variable = rand_range(0,1)
 					if variable > .8:
 						person.add_trait("Milk Storage 2")
@@ -1346,26 +1352,26 @@ func setRaceBonus_Ralph(person, increasestats):
 	#	person.trait_remove(trait)
 	#	person.add_trait(trait)
 	if person.traits.has('Weak'):
-		person.stats.str_mod -= globals.origins.traitlist["Weak"].effect.str_mod
-		person.stats.str_max -= globals.origins.traitlist["Weak"].effect.str_max
+		person.stats.str_mod += globals.origins.traitlist["Weak"].effect.str_mod
+		person.stats.str_max += globals.origins.traitlist["Weak"].effect.str_max
 	if person.traits.has('Strong'):
 		person.stats.str_mod += globals.origins.traitlist["Strong"].effect.str_mod
 		person.stats.str_max += globals.origins.traitlist["Strong"].effect.str_max
 	if person.traits.has('Clumsy'):
-		person.stats.agi_mod -= globals.origins.traitlist["Clumsy"].effect.agi_mod
-		person.stats.agi_max -= globals.origins.traitlist["Clumsy"].effect.agi_max
+		person.stats.agi_mod += globals.origins.traitlist["Clumsy"].effect.agi_mod
+		person.stats.agi_max += globals.origins.traitlist["Clumsy"].effect.agi_max
 	if person.traits.has('Quick'):
 		person.stats.agi_mod += globals.origins.traitlist["Quick"].effect.agi_mod
 		person.stats.agi_max += globals.origins.traitlist["Quick"].effect.agi_max
 	if person.traits.has('Magic Deaf'):
-		person.stats.maf_mod -= globals.origins.traitlist["Magic Deaf"].effect.maf_mod
-		person.stats.maf_max -= globals.origins.traitlist["Magic Deaf"].effect.maf_max
+		person.stats.maf_mod += globals.origins.traitlist["Magic Deaf"].effect.maf_mod
+		person.stats.maf_max += globals.origins.traitlist["Magic Deaf"].effect.maf_max
 	if person.traits.has('Responsive'):
 		person.stats.maf_mod += globals.origins.traitlist["Responsive"].effect.maf_mod
 		person.stats.maf_max += globals.origins.traitlist["Responsive"].effect.maf_max
 	if person.traits.has('Frail'):
-		person.stats.end_mod -= globals.origins.traitlist["Frail"].effect.end_mod
-		person.stats.end_max -= globals.origins.traitlist["Frail"].effect.end_max
+		person.stats.end_mod += globals.origins.traitlist["Frail"].effect.end_mod
+		person.stats.end_max += globals.origins.traitlist["Frail"].effect.end_max
 	if person.traits.has('Robust'):
 		person.stats.end_mod += globals.origins.traitlist["Robust"].effect.end_mod
 		person.stats.end_max += globals.origins.traitlist["Robust"].effect.end_max

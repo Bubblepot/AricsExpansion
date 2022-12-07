@@ -62,7 +62,7 @@ var use_nickname_plus_first_name = false
 var show_onceperday_notification = true
 
 #Automated choice for captives 0 = leave, 1 = rape, 2 = kill
-var capturedSelect = 2
+var capturedSelect = 1
 var rescuedSelect = 0
 var foundSelect = 0
 
@@ -96,6 +96,7 @@ var vices_discovery_presentation_bonus = 20
 #Disable Tearing System
 var disablevaginatearing = false
 var disableanaltearing = false
+var healthPenaltyWhenTorn = true
 
 #Chance of Holes staying Stretched during Sex. Chance + (Elasticity*10)
 var stretchchancevagina = 50
@@ -395,6 +396,7 @@ func applyRalphsTweaks():
 	applyCombatDataTweaks()
 	
 	applyRaceTweaks()
+	globals.racefile.buildGroups()
 
 # Apply variables.gd changes here
 func applyVariableTweaks():
@@ -646,7 +648,7 @@ func addConstantsSupport():
 		baselivestockconsentchance = {descript = "Livestock Consent Base Chance (+ 50% loyalty, 25% obediance, + various factors)", min = 0.0, max = 100.0, object = self},
 		chancetokillsnail = {descript = "", min = 0.0, max = 100.0, object = self},
 		snailegglaborbadresult = {descript = "", object = self},
-		snailegglabordetails = {descript = "Set this to false if you don't wamt to see the details", object = self},
+		snailegglabordetails = {descript = "Set this to false if you don't want to see the details", object = self},
 		livestockautoconsentchance = {descript = "", min = 0.0, max = 100.0, object = self},
 		livestockcanloseconsent = {descript = "", min = 0.0, max = 100.0, object = self},
 		livestockloseconsentchance = {descript = "", min = 0.0, max = 100.0, object = self},
