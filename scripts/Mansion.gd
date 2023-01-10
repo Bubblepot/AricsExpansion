@@ -1070,6 +1070,7 @@ func _on_end_pressed():
 							text0.set_bbcode(text0.get_bbcode() + person.dictionary("The beast lunged forward and violently thrust its throbbing member into the wimpering $name's " + str(globals.expansion.namePussy()) + ". "))
 						else:
 							text0.set_bbcode(text0.get_bbcode() + person.dictionary("The beast lunged forward and forced $name onto the floor before mounting $his " + str(globals.expansion.namePenis()) + " and having its way with $him. "))
+					text0.set_bbcode(text0.get_bbcode() + "\n")
 			###---End Expansion---###
 			person.health += slavehealing * person.stats.health_max
 
@@ -1528,11 +1529,6 @@ func _on_end_pressed():
 	get_node("Navigation/endlog").disabled = false
 	nextdayevents()
 
-	globals.state.daily_reports.global = text0.get_bbcode()
-	globals.state.daily_reports.job = text1.get_bbcode()
-	globals.state.daily_reports.secondary = text2.get_bbcode()
-	globals.state.daily_reports.farm = text3.get_bbcode()
-
 func nextdayevents():
 	get_node("FinishDayPanel").hide()
 	var player = globals.player
@@ -1644,6 +1640,30 @@ func nextdayevents():
 		checkforevents = true
 		return
 	startnewday()
+
+func startnewday():
+	rebuild_slave_list()
+	###---Added by Expansion---### Save daily reports
+	globals.state.daily_reports.global = get_node("FinishDayPanel/FinishDayScreen/Global Report").get_bbcode()
+	globals.state.daily_reports.job = get_node("FinishDayPanel/FinishDayScreen/Job Report").get_bbcode()
+	globals.state.daily_reports.secondary = get_node("FinishDayPanel/FinishDayScreen/Secondary Report").get_bbcode()
+	globals.state.daily_reports.farm = get_node("FinishDayPanel/FinishDayScreen/Farm Report").get_bbcode()
+	###---End Expansion---###
+	get_node("FinishDayPanel").show()
+	autosave()
+	if globals.rules.enddayalise == 0:
+		alisebuild(aliseresults)
+	elif globals.rules.enddayalise == 1 && dailyeventhappend:
+		alisebuild(aliseresults)
+		dailyeventhappend = false
+	else:
+		alisehide()
+	_on_mansion_pressed()
+	
+	enddayprocess = false
+#	if globals.state.supporter == false && int(globals.resources.day)%100 == 0:
+#		get_node("sellout").show()
+
 
 func _on_headgirlbehavior_item_selected( ID ):
 	var text = ''
@@ -1923,7 +1943,7 @@ func build_mansion_info():
 		get_node("MainScreen/mansion/AE_Headgirl_TextRect").visible = false
 		get_node("MainScreen/mansion/AE_Headgirl_TextRect/portrait").set_texture(globals.loadimage(globals.sexuality_images.unknown))
 	#---Dimensional Crystal
-	if globals.state.sidequests.dimcrystal == 0:
+	if globals.state.sidequests.dimcrystal == 0 || globals.state.mansionupgrades.dimensionalcrystal == 0:
 		get_node("MainScreen/mansion/AE_DimCrystal").visible = false
 	else:
 		if globals.state.mansionupgrades.dimensionalcrystal >= 6:
@@ -3869,7 +3889,7 @@ func _on_snailbutton_pressed():
 			counter += 1
 			temptext += "\n" + incubators[i].name + ": [color=aqua]Level " +str(incubators[i].level)+"[/color] - "
 			if incubators[i].filled == true:
-				temptext += "[color=green]Incubating Egg Growth (" +str(incubators[i].growth)+"/10) "
+				temptext += "[color=green]Incubating Egg Growth (" +str(incubators[i].growth)+"/10)[/color] "
 			else:
 				temptext += "[color=red]Empty[/color]"
 	text += "\n\n[center]Incubators[/center]\n[center]Total Incubators: [color=aqua]" +str(counter)+ " / 10[/color][/center]\n" + temptext
